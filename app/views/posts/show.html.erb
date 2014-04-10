@@ -1,6 +1,8 @@
 <h1><%= @post.name%></h1>
 
-<%= image_tag @post.photo.url(:thumb) %>
+<% if @post.photo.present? %>
+  <%= image_tag @post.photo.url(:thumb) %>
+<% end %>
 
 
 <h4>Here is the description of this post</h4>
