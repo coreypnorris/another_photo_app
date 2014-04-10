@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize, only: [:new, :edit, :update]
 
   def index
     @posts = Post.all
