@@ -1,0 +1,12 @@
+<h1>Photo Sharing App</h1>
+
+<ol>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to  "#{post.name}", post_path(post) %>
+      <%= post.description %>
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to "Create a new post", new_post_path, :class => "btn btn-primary" %>

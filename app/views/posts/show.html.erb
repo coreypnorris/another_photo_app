@@ -1,0 +1,16 @@
+<h1><%= @post.name%></h1>
+
+<h4>Here is the description of this post</h4>
+<ul>
+    <li><%= @post.description %></li>
+</ul>
+
+
+<p><%= link_to "Edit this post", edit_post_path(@post), :class => "btn btn-default" %></p>
+<p><%= link_to "Delete this post", post_path(@post),
+                         :confirm => "You sure?",
+                         :method => "delete",
+                         :class => "btn btn-danger" %></p>
+
+
+<p><%= link_to "Return to front page", posts_path %></p>
