@@ -3,8 +3,11 @@
 <ol>
   <% @posts.each do |post| %>
     <li>
-      <%= link_to  "#{post.name}", post_path(post) %>
-      <%= post.description %>
+      <% if post.photo.present?%>
+        <%= image_tag post.photo(:thumb) %><br>
+        <% end %>
+        <%= link_to  "#{post.name}", post_path(post) %>
+
     </li>
   <% end %>
 </ol>

@@ -1,20 +1,15 @@
 <h1><%= @post.name%></h1>
 
 <% if @post.photo.present? %>
-  <%= image_tag @post.photo.url(:thumb) %>
+  <%= image_tag @post.photo.url(:medium) %>
 <% end %>
-
-
-<h4>Here is the description of this post</h4>
-<ul>
-    <li><%= @post.description %></li>
-</ul>
-
-
-<p><%= link_to "Edit this post", edit_post_path(@post), :class => "btn btn-default" %></p>
+<h4>Description: <%= @post.description %></h4>
+<% if current_user %>
+  <p><%= link_to "Edit this post", edit_post_path(@post), :class => "btn btn-default" %></p>
 <p><%= link_to "Delete this post", post_path(@post),
                          :confirm => "You sure?",
                          :method => "delete",
                          :class => "btn btn-danger" %></p>
-
+<% end %>
 <%= link_to "Homepage", posts_path, :class => "btn btn-primary" %>
+
